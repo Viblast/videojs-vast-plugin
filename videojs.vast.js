@@ -276,6 +276,10 @@
       window.console.error('vast video plugin requires videojs-contrib-ads, vast plugin not initialized');
       return null;
     }
+    
+    // load dependencies
+    player.viblast();
+    player.ads();
 
     // set up vast plugin, then set up events here
     player.vast = new Vast(player, settings);
