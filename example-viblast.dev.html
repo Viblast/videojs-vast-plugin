@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Viblast Video.js VAST Example</title>
+
+  <link href="http://vjs.zencdn.net/4.7.1/video-js.css" rel="stylesheet">
+  <link href="lib/videojs-contrib-ads/videojs.ads.css" rel="stylesheet" type="text/css">
+  <link href="videojs.vast.css" rel="stylesheet" type="text/css">
+  
+  <style type="text/css">
+    .description {
+      background-color:#eee;
+      border: 1px solid #777;
+      padding: 10px;
+      font-size: .8em;
+      line-height: 1.5em;
+      font-family: Verdana, sans-serif;
+    }
+    .example-video-container {
+      display: inline-block;
+    }
+  </style>
+  <!--[if lt IE 9]><script src="lib/es5.js"></script><![endif]-->
+  <script src="https://code.jquery.com/jquery-1.7.0.js"></script>
+  <script src="http://viblast.com/player/free-version/qy2fdwajo1/viblast.js"></script>
+  
+  <script src="http://vjs.zencdn.net/4.7.1/video.js"></script>
+  
+  <script src="videojs.viblast.js"></script>
+  <script src="lib/videojs-contrib-ads/videojs.ads.js"></script>
+  <script src="lib/vast-client.js"></script>
+  <script src="videojs.vast.js"></script>
+</head>
+<body>
+  <p class="description">Viblast Video.js VAST plugin examples.</p>
+
+  <div class="example-video-container">
+    <p class="description">No autoplay.</p>
+
+    <video id="vid1" class="video-js vjs-default-skin" controls preload="auto"
+        poster="http://video-js.zencoder.com/oceans-clip.png"
+        data-setup='{}'
+        width='640'
+        height='400'
+        data-viblast-key="N8FjNTQ3NDdhZqZhNGI5NWU5ZTI="
+        data-viblast-log="verbose"
+        >
+      <source src="http://cdn2.viblast.com/streams/big_buck_bunny/adaptive/playlist.m3u8" type='video/mp4'>
+      <p>Video Playback Not Supported</p>
+    </video>
+  </div>
+
+  <div class="example-video-container">
+    <p class="description">With autoplay.</p>
+
+    <video id="vid2" class="video-js vjs-default-skin" autoplay controls preload="auto"
+        poster="http://video-js.zencoder.com/oceans-clip.png"
+        data-setup='{}'
+        width='640'
+        height='400'
+        data-viblast-key="N8FjNTQ3NDdhZqZhNGI5NWU5ZTI="
+        data-viblast-log="verbose"
+        >
+      <source src="http://cdn2.viblast.com/streams/big_buck_bunny/adaptive/playlist.m3u8" type='video/mp4'>
+      <p>Video Playback Not Supported</p>
+    </video>
+  </div>
+ 
+  <script>
+    var vid1 = videojs('vid1');
+    
+    vid1.muted(true);
+    vid1.viblast();
+    vid1.ads();
+    vid1.vast({
+      url: 'http://videoads.theonion.com/vast/270.xml'
+    });	
+    
+    var vid2 = videojs('vid2');
+    vid2.muted(true);
+    vid2.viblast();
+    vid2.ads();
+    vid2.vast({
+      url: 'http://videoads.theonion.com/vast/270.xml'
+    });
+  </script>
+
+</body>
+</html>
+
