@@ -278,7 +278,7 @@
     }
     
     // load dependencies
-    player.viblast();
+    player.viblastVast();
     player.ads();
 
     // set up vast plugin, then set up events here

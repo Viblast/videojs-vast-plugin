@@ -7,6 +7,6 @@
 var ViblastPlugin = function() {
 };
 
-vjs.plugin('viblast', ViblastPlugin);
+vjs.plugin('viblastVast', ViblastPlugin);
 
 })(window, document, videojs);
